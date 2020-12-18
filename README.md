@@ -1,6 +1,6 @@
 # Skatezy
 
-Skatezy is a web app that helps track your figure skating skills! With Skatezy you can
+Skatezy is a web app that helps track your figure skating skills! With Skatezy you can:
 
 * Join a figure skating team and set a home rink  
 * Record and track milestones and metrics, and compare with your teammates  
