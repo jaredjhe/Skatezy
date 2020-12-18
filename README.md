@@ -7,3 +7,7 @@ Skatezy is a web app that helps track your figure skating skills! With Skatezy y
 * Earn medals and awards for meeting training goals  
 * Show off your best moves!  
 * Learn from expert skaters
+
+
+
+Created for Winter Hacklympics 2020
