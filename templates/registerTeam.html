@@ -2,11 +2,21 @@
 
 {% block title %}Register your Team on Skatezy{% endblock %}
 {% block css %}
-
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/recordTraining.css') }}">
 {% endblock %}
 {% block body %}
-<div class="splash-screen-left col-lg-6">
-  <h2>Register my team:</h2>
+<div class="sidebar col-sm-3 col-md-3 col-lg-3 col-xl-3">
+    <!--<img src="{{ url_for('static',filename='assets/profilepicture.png') }}"alt="Profile Picture">-->
+    <div class="d-none g-signin2" data-onsuccess="getImage"></div>
+    <div id = "content"></div>
+    
+    <div class="button"><a href="recordTraining">Start Training</a></div>
+    <div class="button"><a href="team">Team Page</a></div>
+    <div class="button"><a href="">World Stats</a></div>
+    <img src="{{ url_for('static',filename='assets/Skatezy.png') }}" alt="Logo">
+</div>
+<div class="main col-sm-9 col-md-9 col-lg-9 col-xl-9">
+  <h1>Register my team:</h1>
   <form action="/saveteam" method="POST">
     <p name="team_name">
       {{form.team_name.label}}<br>

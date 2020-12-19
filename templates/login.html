@@ -7,17 +7,29 @@
 {% block body %}
     <div class="splash-screen-left col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="log-in-buttons">
-            <div class="button"><p>Sign up with Email</p></div>
-            <div class="button"><p>Log in with Email</p></div>
             <div class="button">
-              <a style="color: white;font-size: 1.5em;margin-bottom: 1:text-decoration:none" href="{{ url_for('login') }}">Log in with Google</a>
+              <p>Sign up with Email</p>
+            </div>
+            <div class="button">
+              <p>Log in with Email</p>
+            </div>
+            <div class="button">
+              <a href="{{url_for('login')}}">Log in with Google</a>
             </div>
         </div>
     </div>
+<!--
     <h1>Ip address: {{ ip_address }}</h1>
     <h1>Geothing: {{ geothing }}</h1>
     <h1>Rinks: {{ name_of_rinks }}</h1>
+<div class="dropdown">
+    <select name="colours" method="GET" action="/">
+    {% for name in name_of_rinks %}
+    <option value= "{{name}}" SELECTED>{{name}}</option>"
+    {% endfor %}
+    </select>
+</div>-->
     <div class="splash-screen-right col-sm-6 col-md-6 col-lg-6 col-xl-6">
-        <img src="../static/assets/splashscreen.png" alt="Splash Screen">
+        <img src="{{ url_for('static',filename='assets/splashscreen.png') }}" alt="Splash Screen">
     </div>
 {% endblock %}

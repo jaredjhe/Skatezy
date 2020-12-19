@@ -2,6 +2,13 @@ body {
     font-family: 'Ramabhadra', 'Verdana', sans-serif;
     display: flex;
   }
+
+h1 {
+  font-family: 'Poiret One', 'Times New Roman', serif;
+  font-size: 3em; 
+  text-align: center;
+  margin: 1em;
+}
   
 .button {
     width: 100%;
@@ -23,9 +30,18 @@ body {
     margin-bottom: 1;
   }
 
+  .button a:hover {
+    color: #F5FFFA;
+  }
+
   .sidebar {
     background-color: #5fd7d7;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+  }
+
+  .sidebar img {
+    width: 50%;
   }

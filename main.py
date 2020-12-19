@@ -19,13 +19,13 @@ app.config['SECRET_KEY']='skatezy'
 
 
 
-@app.route('/')  # '/' for the default page
+@app.route('/',methods=["GET"])  # '/' for the default page
 def home():
   # TODO: FIX THIS
-  ip_address = request.remote_addr
-  
-
-
+  #ip_address = "68.146.3.57"
+  ip_address = request.environ['REMOTE_ADDR']
+  #ip_address = request.remote_addr
+ 
   list_of_rinks = get_ice_rink_address("68.146.3.57")
   name_of_rinks = parce_rink_name(list_of_rinks)
   return render_template('login.html', ip_address=ip_address, name_of_rinks=name_of_rinks) 
@@ -96,8 +96,15 @@ def teampage():
   con.row_factory = sqlite3.Row  
   cur = con.cursor()  
   cur.execute("select * from registerTeam")  
-  rows = cur.fetchall()  
-  return render_template("teamPage.html",rows = rows) 
+  rows = cur.fetchall()
+
+  ip_address = request.environ['REMOTE_ADDR']
+  #ip_address = request.remote_addr
+ 
+  list_of_rinks = get_ice_rink_address("68.146.3.57")
+  name_of_rinks = parce_rink_name(list_of_rinks)
+  
+  return render_template("teamPage.html",rows = rows,ip_address=ip_address, name_of_rinks=name_of_rinks) 
 
 @app.route('/recordTraining', methods=['GET', 'POST'])
 def recordtraining():
@@ -114,7 +121,13 @@ def personal():
   cur = con.cursor()  
   cur.execute("select * from recordTraining")  
   rows = cur.fetchall()  
-  return render_template("personal.html",rows = rows)   
+
+  ip_address = request.environ['REMOTE_ADDR']
+  #ip_address = request.remote_addr
+ 
+  list_of_rinks = get_ice_rink_address("68.146.3.57")
+  name_of_rinks = parce_rink_name(list_of_rinks)
+  return render_template("personal.html",rows = rows, ip_address=ip_address, name_of_rinks=name_of_rinks)   
   #return render_template('personal.html')
 @app.route('/saverecord',methods=["POST"])
 def save_record():

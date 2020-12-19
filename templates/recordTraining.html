@@ -5,15 +5,24 @@
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/recordTraining.css') }}">
 {% endblock %}
 {% block body %}
-   <div class="sidebar col-lg-3">
-        <img src="" alt="Profile Picture">
-        <div class="button"><a href="">My Feed</a></div>
-        <div class="button"><a href="">Team Page</a></div>
+ <head>
+    <title>Record Training</title>
+    <meta name = "google-signin-client_id" content="1091033718500-7b3th9hor8oehceki8rjatn51r90eruv.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+
+<div class="sidebar col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <div class="d-none g-signin2" data-onsuccess="getImage"></div>
+        <div id = "content"></div>
+        <!--<img src="{{ url_for('static',filename='assets/profilepicture.png') }}"alt="Profile Picture">
+        -->
+        <div class="button"><a href="personal">Profile</a></div>
+        <div class="button"><a href="team">Team Page</a></div>
         <div class="button"><a href="">World Stats</a></div>
-        <img src="" alt="Logo">
-    </div>
-<div class="splash-screen-left col-lg-6">
-  <h2>Record my training:</h2>
+        <img src="{{ url_for('static',filename='assets/Skatezy.png') }}" alt="Logo">
+</div>
+<div class="main col-sm-9 col-md-9 col-lg-9 col-xl-9">
+  <h1>Record my training:</h1>
   <form action="/saverecord" method="POST">
     <p name="date_skated">
       {{form.date_skated.label}}<br>
@@ -21,7 +30,7 @@
     </p>
     <p name="distance_skated">
       {{form.distance_skated.label}}<br>
-      {{form.distance_ska ted(size=30)}}
+      {{form.distance_skated(size=30)}}
     </p>
     <p name="time_spent">
       {{form.time_spent.label}}<br>
@@ -34,4 +43,16 @@
     <p>{{form.submit()}}</p>
   </form>
         <!--<div class="log-in-buttons">-->
+<!--profile picture -->
+<script>
+function getImage(googleUser){
+        var profile = googleUser.getBasicProfile()
+        var element = document.querySelector('#content')
+        var image = document.createElement('img')
+        image.setAttribute('src',profile.getImageUrl())
+        element.append(image)
+      }
+</script> 
+
+
 {% endblock %}

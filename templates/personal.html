@@ -4,27 +4,61 @@
 {% block css %}
 
 {% endblock %}
+ <head>
+    <title>My Page</title>
+    <meta name = "google-signin-client_id" content="1091033718500-7b3th9hor8oehceki8rjatn51r90eruv.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
 {% block body %}
-<h3>Training Information</h3>  
-<table border=5>  
-    <thead>
-        <td>User:</td>  
-        <td>Date Skated</td>  
-        <td>Distance Skated</td>  
-        <td>Time Spent</td>  
-    </thead>  
-      
-    {% for row in rows %}  
-      
-        <tr>  
-            <td>{{row["email_id"]}}</td>
-            <td>{{row["date_skated"]}}</td>  
-            <td>{{row["distance_skated"]}}</td>  
-            <td>{{row["time_spent"]}}</td>  
-        </tr>  
-      
-    {% endfor %}  
-</table>  
-
-<br><br>  
+<div class="sidebar col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <!--<img src="{{ url_for('static',filename='assets/profilepicture.png') }}"alt="Profile Picture">-->
+        <div class="d-none g-signin2" data-onsuccess="getImage"></div>
+        <div id = "content"></div>
+        
+        <div class="button"><a href="recordTraining">Start Training</a></div>
+        <div class="button"><a href="team">Team Page</a></div>
+        <div class="button"><a href="">World Stats</a></div>
+        <img src="{{ url_for('static',filename='assets/Skatezy.png') }}" alt="Logo">
+</div>
+<div class="main col-sm-9 col-md-9 col-lg-9 col-xl-9">
+  <h1>Select location:</h1>
+  <div class="dropdown">
+     <select name="colours" method="GET" action="/">
+    {% for name in name_of_rinks %}
+    <option value= "{{name}}" SELECTED>{{name}}</option>"
+    {% endfor %}
+    </select>
+  </div>
+  <h1>Training Information</h1>
+  <div class="info-table">
+        <table border=5>  
+          <thead>
+              <td>User:</td>  
+              <td>Date Skated</td>  
+              <td>Distance Skated</td>  
+              <td>Time Spent</td>  
+          </thead>  
+            
+          {% for row in rows %}  
+            
+              <tr>  
+                  <td>{{row["email_id"]}}</td>
+                  <td>{{row["date_skated"]}}</td>  
+                  <td>{{row["distance_skated"]}}</td>  
+                  <td>{{row["time_spent"]}}</td>  
+              </tr>  
+            
+          {% endfor %}  
+        </table>
+    </div>
+</div>
+<script>
+function getImage(googleUser){
+        var profile = googleUser.getBasicProfile()
+        var element = document.querySelector('#content')
+        var image = document.createElement('img')
+        image.setAttribute('src',profile.getImageUrl())
+        element.append(image)
+      }
+</script> 
 {% endblock %}

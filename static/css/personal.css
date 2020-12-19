@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  table-layout:fixed;
+  width:100%;
+}
+.dropdown {
+  text-align:center;
+  }

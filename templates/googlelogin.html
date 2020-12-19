@@ -23,7 +23,6 @@
       function onSignIn(googleUser){
         var profile = googleUser.getBasicProfile()
         console.log("User is " + JSON.stringify(googleUser.getBasicProfile()))
-
         var element = document.querySelector('#content')
         element.innerText = profile.getName();
         
