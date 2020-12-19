@@ -5,6 +5,10 @@
 
 {% endblock %}
 {% block body %}
+<head>
+<meta name = "google-signin-client_id" content="1091033718500-7b3th9hor8oehceki8rjatn51r90eruv.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
 <div class="sidebar col-sm-3 col-md-3 col-lg-3 col-xl-3">
     <!--<img src="{{ url_for('static',filename='assets/profilepicture.png') }}"alt="Profile Picture">-->
     <div class="d-none g-signin2" data-onsuccess="getImage"></div>
@@ -48,4 +52,13 @@
 </table>  
 
 </div>  
+<script>
+function getImage(googleUser){
+        var profile = googleUser.getBasicProfile()
+        var element = document.querySelector('#content')
+        var image = document.createElement('img')
+        image.setAttribute('src',profile.getImageUrl())
+        element.append(image)
+      }
+</script> 
 {% endblock %}

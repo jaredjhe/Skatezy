@@ -11,5 +11,11 @@ form p {
 }
 
 .button {
-  width: 30%
+  width: 30%;
+  margin-bottom: 100px;
+}
+
+.sign-in-out-buttons {
+  display: flex;
+  flex-direction: row;
 }
