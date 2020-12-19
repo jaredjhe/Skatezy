@@ -104,7 +104,7 @@ def teampage():
   list_of_rinks = get_ice_rink_address("68.146.3.57")
   name_of_rinks = parce_rink_name(list_of_rinks)
   
-  return render_template("teamPage.html",rows = rows,ip_address=ip_address, name_of_rinks=name_of_rinks) 
+  return render_template("team.html",rows = rows,ip_address=ip_address, name_of_rinks=name_of_rinks) 
 
 @app.route('/recordTraining', methods=['GET', 'POST'])
 def recordtraining():
