@@ -1,0 +1,21 @@
+.main {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form p {
+  padding: 20px;
+}
+
+.button {
+  width: 30%;
+  margin-bottom: 100px;
+}
+
+.sign-in-out-buttons {
+  display: flex;
+  flex-direction: row;
+}
