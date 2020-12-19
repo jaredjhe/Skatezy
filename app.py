@@ -11,6 +11,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+#client id: 791943143654-nm35r48q60vr677s6bmb8e0glrs5cipe.apps.googleusercontent.com
+#secret:uaBRpx7Vh_gzaZFUaAnfROzD
+
+
+
 # App config
 app = Flask(__name__)
 # Session config
@@ -22,8 +27,8 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id=os.getenv("GOOGLE_CLIENT_ID"),
-    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
+    client_id=os.getenv("791943143654-nm35r48q60vr677s6bmb8e0glrs5cipe.apps.googleusercontent.com"),
+    client_secret=os.getenv("uaBRpx7Vh_gzaZFUaAnfROzD"),
     access_token_url='https://accounts.google.com/o/oauth2/token',
     access_token_params=None,
     authorize_url='https://accounts.google.com/o/oauth2/auth',

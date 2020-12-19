@@ -1,0 +1,18 @@
+body {
+    font-family: 'Ramabhadra', 'Verdana', sans-serif;
+    display: flex;
+  }
+  
+  .button {
+    width: 100%;
+    background-color: #127489;
+    text-align: center;
+    border-radius: 50px;
+    padding: 1.5em;
+  }
+  
+  .button p {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 1;
+  }
