@@ -1,23 +1,28 @@
- <head>
-    <title>Google Auth Test</title>
-    <meta name = "google-signin-client_id" content="1091033718500-7b3th9hor8oehceki8rjatn51r90eruv.apps.googleusercontent.com">
+ {% extends 'base.html' %}
+{% block title %}Google Authentication{% endblock %}
+{% block css %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/googlelogin.css') }}">
+<meta name = "google-signin-client_id" content="1091033718500-7b3th9hor8oehceki8rjatn51r90eruv.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
+{% endblock %}
+{% block body %}
 
-  <body>
-    <h1>Testing...</h1>
+ <body>
+    <div class="main">
+      <h1>Sign in with your Google Account</h1>
+    
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div id = "content"></div>
     <button onclick="signOut()">Sign Out</button>
-
-    <p>
-      <a href="">Go to login page (testing)</a>
-    </p>
     <form>
 	    <input name="userName1" id="userName1" value="">
       <input name="email1" id="email1" value="">
       <input name="profilePic1" id="profilePic1" value="">
 	  </form>
+    <div class="button">
+      <a href="personal">Continue to Personal page</a>
+    </div>
+    </div>
   </body>
   <script>
       function onSignIn(googleUser){
@@ -46,4 +51,5 @@
         })
       }
   </script>
-</html>
+
+{% endblock %}
