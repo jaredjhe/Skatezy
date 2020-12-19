@@ -33,6 +33,15 @@ def init_db_command():
     init_db()
     click.echo("Initialized the database.")
 
+con = sqlite3.connect("sqlite_db")  
+#print("Database opened successfully")  
+#add user column?
+#con.execute("drop table recordTraining ")
+#print("ok")
+#con.execute("create table recordTraining (email_id TEXT PRIMARYKEY, date_skated TEXT NOT NULL, distance_skated INTEGER NOT NULL, time_spent INTEGER NOT NULL)")
+  
+#print("Table created successfully")  
+
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)

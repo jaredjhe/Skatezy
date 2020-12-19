@@ -11,7 +11,7 @@
     <button onclick="signOut()">Sign Out</button>
 
     <p>
-      <a href="/templates/login.html">Go to login page (testing)</a>
+      <a href="">Go to login page (testing)</a>
     </p>
   </body>
   <script>
@@ -28,7 +28,8 @@
       }
       function signOut(){
         gapi.auth2.getAuthInstance().signOut().then(function(){
-          console.log('user signed out')
+          console.log('User signed out');
+          window.location.reload();
         })
       }
   </script>

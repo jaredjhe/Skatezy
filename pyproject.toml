@@ -17,6 +17,9 @@ termcolor = "^1.1.0"
 boto3 = "^1.16.40"
 python-dotenv = "^0.15.0"
 authlib = "^0.15.2"
+flask-wtf = "^0.14.3"
+wtforms = "^2.3.3"
+django-google-auth = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 

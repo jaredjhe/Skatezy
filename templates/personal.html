@@ -18,30 +18,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="splash-screen-left col-lg-6">
-  <h2>Record my training:</h2>
-  <form action="/saverecord" method="POST">
-    <p name="date_skated">
-      {{form.date_skated.label}}<br>
-      {{form.date_skated(size=30)}}
-    </p>
-    <p name="distance_skated">
-      {{form.distance_skated.label}}<br>
-      {{form.distance_skated(size=30)}}
-    </p>
-    <p name="time_spent">
-      {{form.time_spent.label}}<br>
-      {{form.time_spent(size=30)}}
-    </p>
-    <p>
-      {{form.video_uploaded.label}}<br>
-      {{form.video_uploaded(size=30)}}
-    </p>
-    <p>{{form.submit()}}</p>
-  </form>
-        <!--<div class="log-in-buttons">-->
-          
-          
+  <!--DISPLAYING DATA FROM FORM SUBMITTED ABOUT TRAINING RECORDED-->
+
+  
+<h3>Training Information</h3>  
+<table border=5>  
+    <thead>
+        <td>User:</td>  
+        <td>Date Skated</td>  
+        <td>Distance Skated</td>  
+        <td>Time Spent</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["email_id"]}}</td>
+            <td>{{row["date_skated"]}}</td>  
+            <td>{{row["distance_skated"]}}</td>  
+            <td>{{row["time_spent"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+
 </body>
 
 </html>
