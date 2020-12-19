@@ -13,7 +13,7 @@ from radar_ice_rink import get_ice_rink_address, parce_rink_name
 app = Flask(  # Create a flask app
 	__name__,
 	template_folder='templates',  # Name of html file folder
-	static_folder='static'  # Name of directory for static files
+	static_folder='static'  # Name of directory for static filesa
 )
 app.config['SECRET_KEY']='skatezy'
 
