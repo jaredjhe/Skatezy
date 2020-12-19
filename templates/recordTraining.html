@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Log in / Sign up for Skatezy</title>
+	<title>Record your training on Skatezy</title>
   
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -19,19 +19,19 @@
 </head>
 <body>
 <div class="splash-screen-left col-lg-6">
-  <h2>Record my training:</h2>
+  <h2>Register my tea:</h2>
   <form action="/saverecord" method="POST">
-    <p name="date_skated">
-      {{form.date_skated.label}}<br>
-      {{form.date_skated(size=30)}}
+    <p name="team_name">
+      {{form.team_name.label}}<br>
+      {{form.team_name(size=30)}}
     </p>
-    <p name="distance_skated">
-      {{form.distance_skated.label}}<br>
-      {{form.distance_skated(size=30)}}
+    <p name="team_description">
+      {{form.team_description.label}}<br>
+      {{form.team_description(size=30)}}
     </p>
-    <p name="time_spent">
-      {{form.time_spent.label}}<br>
-      {{form.time_spent(size=30)}}
+    <p name="rink_location">
+      {{form.rink_location.label}}<br>
+      {{form.rink_location(size=30)}}
     </p>
     <p>
       {{form.video_uploaded.label}}<br>
