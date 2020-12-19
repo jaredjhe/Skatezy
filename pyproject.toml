@@ -20,8 +20,8 @@ authlib = "^0.15.2"
 flask-wtf = "^0.14.3"
 wtforms = "^2.3.3"
 django-google-auth = "^0.4.0"
-radar = "^0.3"
 radar-client = "^0.1.9"
+radar = "^0.3"
 
 [tool.poetry.dev-dependencies]
 

@@ -21,11 +21,16 @@ app.config['SECRET_KEY']='skatezy'
 
 @app.route('/')  # '/' for the default page
 def home():
+  # TODO: FIX THIS
   ip_address = request.remote_addr
-  list_of_rinks = get_ice_rink_address(ip_address)
+  
+
+
+  list_of_rinks = get_ice_rink_address("68.146.3.57")
   name_of_rinks = parce_rink_name(list_of_rinks)
   return render_template('login.html', ip_address=ip_address, name_of_rinks=name_of_rinks) 
-  #ip_address=ip+
+
+  
 @app.route('/login')
 def login(): #if user is signed in then redirect to personal
   return render_template('googlelogin.html')
