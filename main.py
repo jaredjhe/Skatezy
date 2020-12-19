@@ -6,7 +6,7 @@ import sqlite3
 import google_auth 
 from flask_login import UserMixin
 from db import get_db
-from radar_ice_rink import get_ice_rink_address,parce_rink_name
+from radar_ice_rink import get_ice_rink_address, parce_rink_name
 
 #from app import user_info
 
@@ -24,8 +24,8 @@ def home():
   ip_address = request.remote_addr
   list_of_rinks = get_ice_rink_address(ip_address)
   name_of_rinks = parce_rink_name(list_of_rinks)
-  return render_template('login.html', ip_address=name_of_rinks) 
-  #ip_address=ip_address
+  return render_template('login.html', ip_address=ip_address, name_of_rinks=name_of_rinks) 
+  #ip_address=ip+
 @app.route('/login')
 def login(): #if user is signed in then redirect to personal
   return render_template('googlelogin.html')

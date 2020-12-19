@@ -1,5 +1,4 @@
 from radar import RadarClient
-from main import *
 #import os
 SECRET_KEY = "prj_test_pk_1384085131f3a144ad5586c9f0e906eefc2ae8e9"
 radar = RadarClient(SECRET_KEY)

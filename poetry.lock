@@ -350,6 +350,37 @@ version = "2020.4"
 
 [[package]]
 category = "main"
+description = "Generate random date(time)."
+name = "radar"
+optional = false
+python-versions = "*"
+version = "0.3"
+
+[[package]]
+category = "main"
+description = ""
+name = "radar-client"
+optional = false
+python-versions = ">=3.7,<4.0"
+version = "0.1.9"
+
+[package.dependencies]
+radar-server = ">=0.1.5,<0.2.0"
+requests = ">=2.21,<3.0"
+
+[[package]]
+category = "main"
+description = ""
+name = "radar-server"
+optional = false
+python-versions = ">=3.5,<4.0"
+version = "0.1.5"
+
+[package.dependencies]
+trie-memoize = ">=0.1.1,<0.2.0"
+
+[[package]]
+category = "main"
 description = "Python HTTP for Humans."
 name = "requests"
 optional = false
@@ -434,6 +465,14 @@ version = "1.1.0"
 
 [[package]]
 category = "main"
+description = "A memoization algorithm in which each function argument represents a new key, creating a trie of caches as defined by your setup."
+name = "trie-memoize"
+optional = false
+python-versions = ">=3.3,<4.0"
+version = "0.1.1"
+
+[[package]]
+category = "main"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 name = "urllib3"
 optional = false
@@ -474,7 +513,7 @@ ipaddress = ["ipaddress"]
 locale = ["Babel (>=1.3)"]
 
 [metadata]
-content-hash = "a1371d98ca489a1a3501046667418d0e3e6335e15178b938585ae8943f20abc5"
+content-hash = "5d122585afaafecad6abed5e962b6a557566eacda643ce7008bcc0b3a7a1b3c9"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -698,6 +737,17 @@ pytz = [
     {file = "pytz-2020.4-py2.py3-none-any.whl", hash = "sha256:5c55e189b682d420be27c6995ba6edce0c0a77dd67bfbe2ae6607134d5851ffd"},
     {file = "pytz-2020.4.tar.gz", hash = "sha256:3e6b7dd2d1e0a59084bcee14a17af60c5c562cdc16d828e8eba2e683d3a7e268"},
 ]
+radar = [
+    {file = "radar-0.3.tar.gz", hash = "sha256:b5e0e4406ce4e47c0d5dad5744e94e8d382b212488f62e14f94d9ea244b1b3b4"},
+]
+radar-client = [
+    {file = "radar-client-0.1.9.tar.gz", hash = "sha256:d0e62a26227103bc303cbeeee14b7981d00aa1c08d7031006a5d8d9bba2ed4ab"},
+    {file = "radar_client-0.1.9-py3-none-any.whl", hash = "sha256:3c15f632a4b2bee4c1db196d6c3e484cb025552fe566d6a71129fd1e92333d7e"},
+]
+radar-server = [
+    {file = "radar-server-0.1.5.tar.gz", hash = "sha256:452d7efbc2250ee36981567e87c3c8d28a42caaf7d5ee7f12e1604840d708ecf"},
+    {file = "radar_server-0.1.5-py3-none-any.whl", hash = "sha256:c38c686ebd6e5c6a1cad380899264785927a4ec0a09dfba4751471ea10ae4312"},
+]
 requests = [
     {file = "requests-2.25.1-py2.py3-none-any.whl", hash = "sha256:c210084e36a42ae6b9219e00e48287def368a26d03a048ddad7bfee44f75871e"},
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
@@ -760,6 +810,10 @@ sqlparse = [
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
+]
+trie-memoize = [
+    {file = "trie-memoize-0.1.1.tar.gz", hash = "sha256:b5651fe6900fcede24d6e829e2f5228250bd4f2e6f238af967d11a6067401ea2"},
+    {file = "trie_memoize-0.1.1-py3-none-any.whl", hash = "sha256:3054f23638b9325e3fbc8b5955b327b4160ce6e55c626a3ef25f10ed93e2b99b"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.2-py2.py3-none-any.whl", hash = "sha256:d8ff90d979214d7b4f8ce956e80f4028fc6860e4431f731ea4a8c08f23f99473"},
