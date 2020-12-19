@@ -1,4 +1,5 @@
 from radar import RadarClient
+from main import *
 #import os
 SECRET_KEY = "prj_test_pk_1384085131f3a144ad5586c9f0e906eefc2ae8e9"
 radar = RadarClient(SECRET_KEY)
@@ -9,8 +10,11 @@ def get_ice_rink_address(entered_ip):
   user_location = (ip_location.latitude, ip_location.longitude)
   nearest_ice_rink_address = radar.search.places(near=user_location, categories="ice-skating",radius=10000)
   return nearest_ice_rink_address
+
 def parce_rink_name(possible_rinks):
   names = [] 
+  for item in possible_rinks:
+    names.append(item.name)
   return names
 
 
