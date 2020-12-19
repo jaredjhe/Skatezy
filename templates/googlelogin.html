@@ -13,6 +13,11 @@
     <p>
       <a href="">Go to login page (testing)</a>
     </p>
+    <form>
+	    <input name="userName1" id="userName1" value="">
+      <input name="email1" id="email1" value="">
+      <input name="profilePic1" id="profilePic1" value="">
+	  </form>
   </body>
   <script>
       function onSignIn(googleUser){
@@ -25,6 +30,15 @@
         var image = document.createElement('img')
         image.setAttribute('src',profile.getImageUrl())
         element.append(image)
+
+        var googleProfile = googleUser.getBasicProfile()
+        var userName = googleProfile.getName()
+        var email = googleProfile.getEmail()
+        var profilePic = googleProfile.getImageUrl()
+        
+        document.forms[0].userName1.value = userName;
+        document.forms[0].email1.value = email;
+        document.forms[0].profilePic1.value = profilePic;
       }
       function signOut(){
         gapi.auth2.getAuthInstance().signOut().then(function(){

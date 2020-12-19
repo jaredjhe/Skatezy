@@ -1,37 +1,31 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Record your training on Skatezy</title>
-  
-    <!--BOOTSTRAP-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% extends 'base.html' %}
 
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/login.css" rel="stylesheet" type="text/css"/>
-
-    <!--CUSTOM FONTS-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
-</head>
-<body>
+{% block title %}Record your Training on Skatezy{% endblock %}
+{% block css %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/recordTraining.css') }}">
+{% endblock %}
+{% block body %}
+   <div class="sidebar col-lg-3">
+        <img src="" alt="Profile Picture">
+        <div class="button"><a href="">My Feed</a></div>
+        <div class="button"><a href="">Team Page</a></div>
+        <div class="button"><a href="">World Stats</a></div>
+        <img src="" alt="Logo">
+    </div>
 <div class="splash-screen-left col-lg-6">
-  <h2>Register my tea:</h2>
+  <h2>Record my training:</h2>
   <form action="/saverecord" method="POST">
-    <p name="team_name">
-      {{form.team_name.label}}<br>
-      {{form.team_name(size=30)}}
+    <p name="date_skated">
+      {{form.date_skated.label}}<br>
+      {{form.date_skated(size=30)}}
     </p>
-    <p name="team_description">
-      {{form.team_description.label}}<br>
-      {{form.team_description(size=30)}}
+    <p name="distance_skated">
+      {{form.distance_skated.label}}<br>
+      {{form.distance_skated(size=30)}}
     </p>
-    <p name="rink_location">
-      {{form.rink_location.label}}<br>
-      {{form.rink_location(size=30)}}
+    <p name="time_spent">
+      {{form.time_spent.label}}<br>
+      {{form.time_spent(size=30)}}
     </p>
     <p>
       {{form.video_uploaded.label}}<br>
@@ -40,8 +34,4 @@
     <p>{{form.submit()}}</p>
   </form>
         <!--<div class="log-in-buttons">-->
-          
-          
-</body>
-
-</html>
+{% endblock %}

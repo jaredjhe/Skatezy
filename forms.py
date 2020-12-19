@@ -15,4 +15,5 @@ class RegisterTeam(FlaskForm):
   rink_location = IntegerField('Coordinates of your skating rink')
   member_emails = EmailField('Enter your friend emails')
   submit = SubmitField('Register Team!')
-  
+
+ #create class for user info???????/ 
