@@ -38,7 +38,7 @@ con = sqlite3.connect("sqlite_db")
 #add user column?
 #con.execute("drop table recordTraining ")
 #print("ok")
-#con.execute("create table recordTraining (email_id TEXT PRIMARYKEY, date_skated TEXT NOT NULL, distance_skated INTEGER NOT NULL, time_spent INTEGER NOT NULL)")
+#con.execute("create table registerTeam (team_name TEXT PRIMARYKEY, team_description TEXT NOT NULL, rink_location INTEGER NOT NULL, member_emails TEXT NOT NULL)")
   
 #print("Table created successfully")  
 

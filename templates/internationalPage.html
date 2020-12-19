@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}My Page{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% block body %}
+<h3>Training Information</h3>  
+<table border=5>  
+    <thead>
+        <td>User id:</td>  
+        <td>Name</td>  
+        <td>email</td>  
+        <td>Profile pic</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["userName1"]}}</td>
+            <td>{{row["email1"]}}</td>  
+            <td>{{row["distance_skated"]}}</td>  
+            <td>{{row["profile_pic"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+
+<br><br>  
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Register your Team on Skatezy{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% block body %}
+<div class="splash-screen-left col-lg-6">
+  <h2>Register my team:</h2>
+  <form action="/saveteam" method="POST">
+    <p name="team_name">
+      {{form.team_name.label}}<br>
+      {{form.team_name(size=30)}}
+    </p>
+    <p name="team_description">
+      {{form.team_description.label}}<br>
+      {{form.team_description(size=30)}}
+    </p>
+    <p name="rink_location">
+      {{form.rink_location.label}}<br>
+      {{form.rink_location(size=30)}}
+    </p>
+    <p name="member_emails">
+      {{form.member_emails.label}}<br>
+      {{form.member_emails(size=30)}}
+    </p>
+    <p>{{form.submit()}}</p>
+  </form>
+        <!--<div class="log-in-buttons">-->
+{% endblock %}
