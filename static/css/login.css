@@ -24,3 +24,7 @@
     height: 100%;
     width: auto;
 }
+
+a:hover {
+  color: red;
+}

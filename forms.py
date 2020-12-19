@@ -10,4 +10,5 @@ class RecordTraining(FlaskForm):
 
 class RegisterTeam(FlaskForm):
   team_name = StringField('Team Name:')
+  team_description = StringField('')
   

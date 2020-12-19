@@ -6,6 +6,8 @@ import sqlite3
 import google_auth 
 from flask_login import UserMixin
 from db import get_db
+#from app import user_info
+
 
 app = Flask(  # Create a flask app
 	__name__,
@@ -34,7 +36,6 @@ def personal():
   rows = cur.fetchall()  
   return render_template("personal.html",rows = rows)   
   #return render_template('personal.html')
-
 
 @app.route('/saverecord',methods=["POST"])
 def save_record():

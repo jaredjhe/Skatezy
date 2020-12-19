@@ -66,7 +66,6 @@ def authorize():
     session.permanent = True  # make the session permanant so it keeps existing after broweser gets closed
     return redirect('/',user_info=user_info)
 
-
 @app.route('/logout')
 def logout():
     for key in list(session.keys()):
