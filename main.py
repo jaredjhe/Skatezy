@@ -77,6 +77,7 @@ def saveteam():
   db = get_db()
   with sqlite3.connect("sqlite_db") as con:
     cur = con.cursor()
+    # use 'cur.execute("DELETE FROM registerTeam")' to delete table
     cur.execute(
       "INSERT into registerTeam (team_name, team_description, rink_location, member_emails) VALUES (?, ?, ?, ?)",
       (team_name, team_description, rink_location, member_emails))
@@ -138,6 +139,7 @@ def save_record():
   db = get_db()
   with sqlite3.connect("sqlite_db") as con:
     cur = con.cursor()
+    # use 'cur.execute("DELETE FROM recordTraining")' to delete table
     cur.execute(
       "INSERT into recordTraining (date_skated, distance_skated, time_spent) VALUES (?, ?, ?)",
       (date_skated, distance_skated, time_spent))
