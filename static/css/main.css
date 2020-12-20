@@ -46,3 +46,9 @@ h1 {
   .sidebar img {
     width: 50%;
 }
+
+.sidebar #content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
