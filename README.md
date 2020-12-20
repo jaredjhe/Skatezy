@@ -1,4 +1,4 @@
-# Skatezy
+<a href="https://devpost.com/software/skatezy">Skatezy</a>
 
 Skatezy is a web app that helps track your figure skating skills! With Skatezy you can:
 
