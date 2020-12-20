@@ -10,18 +10,12 @@
  <body>
     <div class="main">
       <h1>Sign in with your Google Account</h1>
-    
     <div class="sign-in-out-buttons">
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      <div id = "content"></div>
+      <button onclick="signOut()">Sign Out</button>
     </div>
-    
-    <button onclick="signOut()">Sign Out</button>
-    <form>
-	    <input name="userName1" id="userName1" value="">
-      <input name="email1" id="email1" value="">
-      <input name="profilePic1" id="profilePic1" value="">
-	  </form>
+    <div id = "content"></div>
+
     <div class="button">
       <a href="personal">Continue to Personal page</a>
     </div>
@@ -43,9 +37,7 @@
         var email = googleProfile.getEmail()
         var profilePic = googleProfile.getImageUrl()
         
-        document.forms[0].userName1.value = userName;
-        document.forms[0].email1.value = email;
-        document.forms[0].profilePic1.value = profilePic;
+        
       }
       function signOut(){
         gapi.auth2.getAuthInstance().signOut().then(function(){
