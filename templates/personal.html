@@ -2,7 +2,7 @@
 
 {% block title %}My Page{% endblock %}
 {% block css %}
-
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/personal.css') }}">
 {% endblock %}
  
 {% block body %}
@@ -18,7 +18,7 @@
         
         <div class="button"><a href="recordTraining">Start Training</a></div>
         <div class="button"><a href="team">Team Page</a></div>
-        <div class="button"><a href="registerTeam">Team Reigstration</a></div>
+        <div class="button"><a href="registerTeam">Team Registration</a></div>
         <img src="{{ url_for('static',filename='assets/Skatezy.png') }}" alt="Logo">
 </div>
 <div class="main col-sm-9 col-md-9 col-lg-9 col-xl-9">
@@ -31,7 +31,7 @@
     </select>
   </div>
   <h1>Training Information</h1>
-  <div class="info-table center">
+  
         <table border=5>  
           <thead>
               <td>User:</td>  
@@ -51,7 +51,7 @@
             
           {% endfor %}  
         </table>
-    </div>
+    
 </div>
 <script>
 function getImage(googleUser){

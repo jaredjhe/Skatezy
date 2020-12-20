@@ -145,17 +145,11 @@ def save_record():
 
   #video uploaded to be done later
   # method to save recordTraining
-  return render_template('recordTraining.html',form=form) 
-
-
+  return render_template('recordTraining.html',form=form)
 
 @app.route('/base')
 def base_html():
   return render_template('base.html')
-
-@app.route('/test')
-def test_html():
-  return render_template('test.html')
 
 if __name__ == "__main__":  # Makes sure this is the main process
 	app.run( # Starts the site
